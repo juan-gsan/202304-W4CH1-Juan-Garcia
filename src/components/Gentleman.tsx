@@ -4,7 +4,6 @@ import { GentlemanData } from "../types/mock.type";
 
 export function Gentleman() {
   const mockData: GentlemanData[] = getMockData();
-  // const [count, setCount] = useState(0);
 
   const [gentlemen, setGentlemen] = useState(mockData);
 
@@ -45,13 +44,7 @@ export function Gentleman() {
           </li>
         </ul>
       </div>
-      <i
-        className="icon gentleman__icon fas fa-check"
-        // onClick={() => {
-        //   setCount(count + 1);
-        //   console.log(count);
-        // }}
-      ></i>
+      <i className="icon gentleman__icon fas fa-check"></i>
       <i
         className="icon gentleman__icon gentleman__icon--delete fas fa-times"
         onClick={() => {
