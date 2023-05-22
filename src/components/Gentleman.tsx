@@ -1,8 +1,13 @@
+import { useState } from "react";
 import { getMockData } from "../data/mock.data";
 import { GentlemanData } from "../types/mock.type";
 
 export function Gentleman() {
   const mockData: GentlemanData[] = getMockData();
+  // const [count, setCount] = useState(0);
+
+  const [gentlemen, setGentlemen] = useState(mockData);
+
   const gentleman = ({
     id,
     name,
@@ -40,14 +45,25 @@ export function Gentleman() {
           </li>
         </ul>
       </div>
-      <i className="icon gentleman__icon fas fa-check"></i>
-      <i className="icon gentleman__icon gentleman__icon--delete fas fa-times"></i>
+      <i
+        className="icon gentleman__icon fas fa-check"
+        // onClick={() => {
+        //   setCount(count + 1);
+        //   console.log(count);
+        // }}
+      ></i>
+      <i
+        className="icon gentleman__icon gentleman__icon--delete fas fa-times"
+        onClick={() => {
+          setGentlemen(gentlemen.filter((item) => item.id !== id));
+        }}
+      ></i>
     </li>
   );
 
   return (
     <main className="main">
-      <ul className="gentlemen">{mockData.map(gentleman)}</ul>
+      <ul className="gentlemen">{gentlemen.map(gentleman)}</ul>
     </main>
   );
 }
