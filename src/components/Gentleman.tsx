@@ -15,7 +15,6 @@ export function Gentleman() {
     twitter,
     picture,
     alternativeText,
-    selected,
   }: GentlemanData) => (
     <li key={id} className="gentleman">
       <div className="gentleman__avatar-container">
